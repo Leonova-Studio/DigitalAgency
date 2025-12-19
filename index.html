@@ -1,0 +1,1738 @@
+<!doctype html>
+<html lang="es">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Leonova Studio - Agencia premium de diseño web, gráfico y digital. Transformamos ideas en experiencias digitales inolvidables.">
+  <title>Leonova Studio - Diseño Premium &amp; Estrategia Digital</title>
+  <style>
+    :root {
+      --color-primary: #0B1B2B;
+      --color-gold: #F2C94C;
+      --color-coral: #FF6B6B;
+      --color-light: #EAF1F7;
+      --color-muted: #B8C4D6;
+      --color-border: #17324A;
+      --color-whatsapp: #25D366;
+      
+      --font-primary: 'Inter', 'Segoe UI', 'Roboto', -apple-system, sans-serif;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
+      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.2);
+      --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      height: 100%;
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      height: 100%;
+      font-family: var(--font-primary);
+      background-color: var(--color-primary);
+      color: var(--color-light);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    .page-wrapper {
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+    }
+    
+    /* ============================================
+       HEADER
+    ============================================ */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: rgba(11, 27, 43, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--color-border);
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .header-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.5rem;
+      gap: 2rem;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--color-gold);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+      white-space: nowrap;
+    }
+    
+    .nav-desktop {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+    }
+    
+    .nav-link {
+      color: var(--color-light);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: var(--transition);
+      padding: 0.5rem 0;
+    }
+    
+    .nav-link:hover,
+    .nav-link:focus {
+      color: var(--color-gold);
+      outline: none;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+    }
+    
+    .social-icon {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: rgba(242, 201, 76, 0.1);
+      transition: var(--transition);
+      text-decoration: none;
+    }
+    
+    .social-icon:hover,
+    .social-icon:focus {
+      background-color: var(--color-gold);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .social-icon svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--color-gold);
+      transition: var(--transition);
+    }
+    
+    .social-icon:hover svg,
+    .social-icon:focus svg {
+      fill: var(--color-primary);
+    }
+    
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+    
+    .hamburger span {
+      width: 28px;
+      height: 3px;
+      background-color: var(--color-light);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+    
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(8px, 8px);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(8px, -8px);
+    }
+    
+    .nav-mobile {
+      display: none;
+      background-color: rgba(11, 27, 43, 0.98);
+      border-top: 1px solid var(--color-border);
+      padding: 1.5rem;
+      text-align: center;
+    }
+    
+    .nav-mobile.active {
+      display: block;
+    }
+    
+    .nav-mobile .nav-menu {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .nav-mobile .social-links {
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+    
+    /* ============================================
+       HERO CAROUSEL
+    ============================================ */
+    .hero-carousel {
+      position: relative;
+      width: 100%;
+      height: 600px;
+      overflow: hidden;
+    }
+    
+    .carousel-slides {
+      display: flex;
+      height: 100%;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .carousel-slide {
+      min-width: 100%;
+      height: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .carousel-slide img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    
+    .carousel-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(11, 27, 43, 0.85), rgba(23, 50, 74, 0.7));
+    }
+    
+    .carousel-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 2rem;
+      max-width: 900px;
+    }
+    
+    .carousel-content h2 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
+      color: var(--color-light);
+    }
+    
+    .carousel-content p {
+      font-size: 1.25rem;
+      color: var(--color-muted);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+      font-family: var(--font-primary);
+    }
+    
+    .btn-primary {
+      background-color: var(--color-gold);
+      color: var(--color-primary);
+    }
+    
+    .btn-primary:hover,
+    .btn-primary:focus {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--color-coral);
+      border: 2px solid var(--color-coral);
+    }
+    
+    .btn-secondary:hover,
+    .btn-secondary:focus {
+      background-color: rgba(255, 107, 107, 0.1);
+    }
+    
+    /* Controles del carrusel */
+    .carousel-controls {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      z-index: 3;
+    }
+    
+    .carousel-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: rgba(242, 201, 76, 0.9);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      color: var(--color-primary);
+    }
+    
+    .carousel-btn:hover,
+    .carousel-btn:focus {
+      background-color: var(--color-gold);
+      transform: scale(1.1);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .carousel-indicators {
+      display: flex;
+      gap: 0.5rem;
+    }
+    
+    .carousel-indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.4);
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .carousel-indicator.active {
+      background-color: var(--color-gold);
+      width: 32px;
+      border-radius: 6px;
+    }
+    
+    /* ============================================
+       WHATSAPP FLOATING BUTTON
+    ============================================ */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 1000;
+    }
+    
+    .whatsapp-btn {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: var(--color-whatsapp);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-lg);
+      transition: var(--transition);
+      animation: pulse 2s infinite;
+    }
+    
+    .whatsapp-btn:hover,
+    .whatsapp-btn:focus {
+      transform: scale(1.1);
+    }
+    
+    .whatsapp-btn svg {
+      width: 32px;
+      height: 32px;
+      fill: white;
+    }
+    
+    @keyframes pulse {
+      0%, 100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+      }
+      50% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+      }
+    }
+    
+    .whatsapp-window {
+      position: fixed;
+      bottom: 6rem;
+      right: 2rem;
+      width: 360px;
+      max-width: calc(100vw - 4rem);
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      transform: scale(0);
+      opacity: 0;
+      transition: var(--transition);
+      z-index: 999;
+    }
+    
+    .whatsapp-window.active {
+      transform: scale(1);
+      opacity: 1;
+    }
+    
+    .whatsapp-header {
+      background-color: var(--color-whatsapp);
+      color: white;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .whatsapp-header h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+    }
+    
+    .whatsapp-close {
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .whatsapp-body {
+      padding: 1.5rem;
+      background-color: #f7f7f7;
+      color: var(--color-primary);
+    }
+    
+    .whatsapp-body p {
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+    
+    .whatsapp-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .whatsapp-form label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      margin-bottom: 0.25rem;
+      display: block;
+    }
+    
+    .whatsapp-form input,
+    .whatsapp-form select {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-family: var(--font-primary);
+      font-size: 0.9rem;
+    }
+    
+    .whatsapp-form input:focus,
+    .whatsapp-form select:focus {
+      outline: 2px solid var(--color-whatsapp);
+      outline-offset: 0;
+    }
+    
+    .whatsapp-submit {
+      background-color: var(--color-whatsapp);
+      color: white;
+      padding: 0.875rem;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 1rem;
+    }
+    
+    .whatsapp-submit:hover,
+    .whatsapp-submit:focus {
+      background-color: #1fb855;
+      transform: translateY(-2px);
+    }
+    
+    /* ============================================
+       SERVICES SECTION
+    ============================================ */
+    .services {
+      padding: 6rem 1.5rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 4rem;
+    }
+    
+    .section-subtitle {
+      color: var(--color-coral);
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 0.75rem;
+    }
+    
+    .section-title {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: var(--color-light);
+    }
+    
+    .section-description {
+      font-size: 1.125rem;
+      color: var(--color-muted);
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+    
+    .service-card {
+      background-color: rgba(23, 50, 74, 0.3);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 2.5rem;
+      transition: var(--transition);
+      text-align: center;
+      cursor: pointer;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--color-gold);
+    }
+    
+    .service-icon {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .service-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--color-light);
+    }
+    
+    .service-description {
+      color: var(--color-muted);
+      line-height: 1.7;
+    }
+    
+    /* ============================================
+       SERVICE MODALS
+    ============================================ */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(5px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      overflow-y: auto;
+    }
+    
+    .modal-overlay.active {
+      display: flex;
+    }
+    
+    .modal-content {
+      background-color: var(--color-primary);
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+      max-width: 1000px;
+      width: 100%;
+      max-height: 90%;
+      overflow-y: auto;
+      position: relative;
+      animation: modalSlideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    @keyframes modalSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+    
+    .modal-header {
+      position: sticky;
+      top: 0;
+      background-color: rgba(11, 27, 43, 0.98);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      border-bottom: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 10;
+    }
+    
+    .modal-header h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--color-gold);
+      margin: 0;
+    }
+    
+    .modal-close {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgba(255, 107, 107, 0.2);
+      border: none;
+      color: var(--color-coral);
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      flex-shrink: 0;
+    }
+    
+    .modal-close:hover,
+    .modal-close:focus {
+      background-color: var(--color-coral);
+      color: var(--color-primary);
+      transform: rotate(90deg);
+    }
+    
+    .modal-body {
+      padding: 3rem 2rem;
+    }
+    
+    .modal-hero-img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+    }
+    
+    .modal-intro {
+      font-size: 1.25rem;
+      color: var(--color-muted);
+      line-height: 1.8;
+      margin-bottom: 3rem;
+    }
+    
+    .modal-features {
+      margin-bottom: 3rem;
+    }
+    
+    .modal-features h3 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--color-light);
+      margin-bottom: 2rem;
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    
+    .feature-item {
+      background-color: rgba(23, 50, 74, 0.3);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: var(--transition);
+    }
+    
+    .feature-item:hover {
+      border-color: var(--color-gold);
+      transform: translateY(-4px);
+    }
+    
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    
+    .feature-item h4 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-light);
+      margin-bottom: 0.75rem;
+    }
+    
+    .feature-item p {
+      color: var(--color-muted);
+      line-height: 1.7;
+    }
+    
+    .modal-gallery {
+      margin-bottom: 3rem;
+    }
+    
+    .modal-gallery h3 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--color-light);
+      margin-bottom: 2rem;
+    }
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .gallery-item {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: var(--transition);
+    }
+    
+    .gallery-item:hover {
+      transform: scale(1.05);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .modal-cta {
+      background: linear-gradient(135deg, rgba(242, 201, 76, 0.1), rgba(255, 107, 107, 0.1));
+      border: 1px solid var(--color-gold);
+      border-radius: 12px;
+      padding: 3rem;
+      text-align: center;
+    }
+    
+    .modal-cta h3 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--color-light);
+      margin-bottom: 1rem;
+    }
+    
+    .modal-cta p {
+      font-size: 1.125rem;
+      color: var(--color-muted);
+      margin-bottom: 2rem;
+    }
+    
+    .modal-cta .btn {
+      margin: 0.5rem;
+    }
+    
+    /* ============================================
+       CONTACT FORM
+    ============================================ */
+    .contact-section {
+      padding: 6rem 1.5rem;
+      background-color: rgba(23, 50, 74, 0.2);
+    }
+    
+    .contact-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .contact-form {
+      background-color: rgba(23, 50, 74, 0.5);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 3rem;
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--color-light);
+    }
+    
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 0.875rem;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      background-color: rgba(11, 27, 43, 0.6);
+      color: var(--color-light);
+      font-family: var(--font-primary);
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: 2px solid var(--color-gold);
+      outline-offset: 0;
+      border-color: var(--color-gold);
+    }
+    
+    .form-group textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+    
+    .form-submit {
+      background-color: var(--color-gold);
+      color: var(--color-primary);
+      padding: 1rem 2.5rem;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: var(--transition);
+      width: 100%;
+    }
+    
+    .form-submit:hover,
+    .form-submit:focus {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .form-message {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: 600;
+      display: none;
+    }
+    
+    .form-message.success {
+      background-color: rgba(37, 211, 102, 0.2);
+      border: 1px solid var(--color-whatsapp);
+      color: var(--color-whatsapp);
+      display: block;
+    }
+    
+    /* ============================================
+       FOOTER
+    ============================================ */
+    footer {
+      background-color: rgba(11, 27, 43, 0.95);
+      border-top: 1px solid var(--color-border);
+      padding: 3rem 1.5rem 1.5rem;
+    }
+    
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    
+    .footer-section h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+      color: var(--color-gold);
+    }
+    
+    .footer-logo {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--color-gold);
+      margin-bottom: 1rem;
+    }
+    
+    .footer-description {
+      color: var(--color-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+    
+    .footer-menu {
+      list-style: none;
+    }
+    
+    .footer-menu li {
+      margin-bottom: 0.75rem;
+    }
+    
+    .footer-menu a {
+      color: var(--color-muted);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    .footer-menu a:hover,
+    .footer-menu a:focus {
+      color: var(--color-gold);
+    }
+    
+    .footer-social {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .footer-bottom {
+      max-width: 1400px;
+      margin: 0 auto;
+      border-top: 1px solid var(--color-border);
+      padding-top: 2rem;
+      text-align: center;
+      color: var(--color-muted);
+      font-size: 0.875rem;
+    }
+    
+    .footer-bottom p {
+      margin-bottom: 0.5rem;
+    }
+    
+    .footer-bottom a {
+      color: var(--color-gold);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+    
+    .footer-bottom a:hover,
+    .footer-bottom a:focus {
+      color: var(--color-coral);
+    }
+    
+    /* ============================================
+       RESPONSIVE
+    ============================================ */
+    @media (max-width: 968px) {
+      .nav-desktop {
+        display: none;
+      }
+      
+      .hamburger {
+        display: flex;
+      }
+      
+      .carousel-content h2 {
+        font-size: 2.5rem;
+      }
+      
+      .carousel-content p {
+        font-size: 1.125rem;
+      }
+      
+      .section-title {
+        font-size: 2.25rem;
+      }
+      
+      .hero-carousel {
+        height: 500px;
+      }
+      
+      .whatsapp-window {
+        right: 1rem;
+        bottom: 5.5rem;
+      }
+      
+      .whatsapp-float {
+        right: 1rem;
+        bottom: 1rem;
+      }
+      
+      .modal-body {
+        padding: 2rem 1.5rem;
+      }
+      
+      .modal-header h2 {
+        font-size: 1.5rem;
+      }
+      
+      .modal-cta {
+        padding: 2rem 1.5rem;
+      }
+    }
+    
+    @media (max-width: 640px) {
+      .header-content {
+        padding: 1rem;
+      }
+      
+      .logo {
+        font-size: 1.25rem;
+      }
+      
+      .carousel-content h2 {
+        font-size: 2rem;
+      }
+      
+      .carousel-content p {
+        font-size: 1rem;
+      }
+      
+      .section-title {
+        font-size: 1.875rem;
+      }
+      
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .contact-form {
+        padding: 2rem 1.5rem;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      
+      .footer-social {
+        justify-content: center;
+      }
+      
+      .nav-mobile .nav-menu {
+        align-items: center;
+      }
+      
+      .hero-carousel {
+        height: 400px;
+      }
+      
+      .carousel-controls {
+        bottom: 1rem;
+        gap: 1rem;
+      }
+      
+      .carousel-btn {
+        width: 40px;
+        height: 40px;
+      }
+      
+      .modal-header {
+        padding: 1.5rem;
+      }
+      
+      .modal-hero-img {
+        height: 250px;
+      }
+      
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .modal-cta .btn {
+        width: 100%;
+        margin: 0.5rem 0;
+      }
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body>
+  <div class="page-wrapper"><!-- ============================================
+       HEADER
+  ============================================ -->
+   <header>
+    <div class="header-content"><a href="#home" class="logo">Leonova Studio</a> <!-- Desktop Navigation -->
+     <nav class="nav-desktop" aria-label="Navegación principal">
+      <ul class="nav-menu">
+       <li><a href="#home" class="nav-link">Home</a></li>
+       <li><a href="#servicios" class="nav-link">Servicios</a></li>
+       <li><a href="https://leonova-studio.github.io/portfolio/" target="_blank" rel="noopener noreferrer" class="nav-link">Portafolio</a></li>
+       <li><a href="#contacto" class="nav-link">Contacto</a></li>
+      </ul>
+      <div class="social-links"><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+        </svg></a> <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+        </svg></a> <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="TikTok">
+        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+        </svg></a>
+      </div>
+     </nav><!-- Mobile Hamburger --> <button class="hamburger" aria-label="Menú de navegación" aria-expanded="false"> <span></span> <span></span> <span></span> </button>
+    </div><!-- Mobile Navigation -->
+    <nav class="nav-mobile" aria-label="Navegación móvil">
+     <ul class="nav-menu">
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#servicios" class="nav-link">Servicios</a></li>
+      <li><a href="https://leonova-studio.github.io/portfolio/" target="_blank" rel="noopener noreferrer" class="nav-link">Portafolio</a></li>
+      <li><a href="#contacto" class="nav-link">Contacto</a></li>
+     </ul>
+     <div class="social-links"><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+       <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+       </svg></a> <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+       <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+       </svg></a> <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="TikTok">
+       <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+       </svg></a>
+     </div>
+    </nav>
+   </header><!-- ============================================
+       HERO CAROUSEL
+  ============================================ -->
+   <main id="home">
+    <section class="hero-carousel" aria-label="Carrusel principal">
+     <div class="carousel-slides"><!-- Slide 1 -->
+      <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1600&amp;h=900&amp;fit=crop" alt="Equipo trabajando en proyecto creativo">
+       <div class="carousel-overlay"></div>
+       <div class="carousel-content">
+        <h2>Diseño que conecta. Estrategia que emociona.</h2>
+        <p>Transformamos ideas en experiencias digitales que inspiran y convierten.</p><a href="#contacto" class="btn btn-primary">Comienza tu proyecto</a>
+       </div>
+      </div><!-- Slide 2 -->
+      <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1600&amp;h=900&amp;fit=crop" alt="Diseñadores creativos en sesión de brainstorming">
+       <div class="carousel-overlay"></div>
+       <div class="carousel-content">
+        <h2>Creatividad sin límites</h2>
+        <p>Más de 200 proyectos entregados con excelencia y pasión por el diseño.</p><a href="https://leonova-studio.github.io/portfolio/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Ver Portafolio</a>
+       </div>
+      </div><!-- Slide 3 -->
+      <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=1600&amp;h=900&amp;fit=crop" alt="Workspace moderno de diseño">
+       <div class="carousel-overlay"></div>
+       <div class="carousel-content">
+        <h2>Tu visión, nuestra misión</h2>
+        <p>Soluciones premium en diseño web, gráfico y digital para marcas que quieren destacar.</p><a href="#servicios" class="btn btn-primary">Explorar Servicios</a>
+       </div>
+      </div>
+     </div><!-- Controles del carrusel -->
+     <div class="carousel-controls"><button class="carousel-btn carousel-prev" aria-label="Diapositiva anterior">
+       <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+       </svg></button>
+      <div class="carousel-indicators"><button class="carousel-indicator active" aria-label="Ir a diapositiva 1"></button> <button class="carousel-indicator" aria-label="Ir a diapositiva 2"></button> <button class="carousel-indicator" aria-label="Ir a diapositiva 3"></button>
+      </div><button class="carousel-btn carousel-play" aria-label="Pausar carrusel">
+       <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor"><path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
+       </svg></button> <button class="carousel-btn carousel-next" aria-label="Siguiente diapositiva">
+       <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z" />
+       </svg></button>
+     </div>
+    </section><!-- ============================================
+         SERVICES
+    ============================================ -->
+    <section id="servicios" class="services">
+     <div class="section-header">
+      <p class="section-subtitle">Nuestros Servicios</p>
+      <h2 class="section-title">Soluciones creativas premium</h2>
+      <p class="section-description">Desde estrategia hasta ejecución, creamos experiencias que inspiran y convierten.</p>
+     </div>
+     <div class="services-grid">
+      <div class="service-card" data-modal="web">
+       <div class="service-icon">
+        🎨
+       </div>
+       <h3 class="service-title">Diseño Web</h3>
+       <p class="service-description">Sitios web profesionales, responsivos y optimizados para conversión. Tu presencia digital al siguiente nivel.</p>
+      </div>
+      <div class="service-card" data-modal="grafico">
+       <div class="service-icon">
+        ✨
+       </div>
+       <h3 class="service-title">Diseño Gráfico</h3>
+       <p class="service-description">Identidades visuales únicas y memorables. Branding que cuenta historias y conecta con emociones.</p>
+      </div>
+      <div class="service-card" data-modal="digital">
+       <div class="service-icon">
+        🚀
+       </div>
+       <h3 class="service-title">Diseño Digital</h3>
+       <p class="service-description">Campañas digitales, interfaces y experiencias interactivas que cautivan audiencias globales.</p>
+      </div>
+     </div>
+    </section><!-- ============================================
+         CONTACT FORM
+    ============================================ -->
+    <section id="contacto" class="contact-section">
+     <div class="contact-wrapper">
+      <div class="section-header">
+       <p class="section-subtitle">Contáctanos</p>
+       <h2 class="section-title">Hagamos realidad tu proyecto</h2>
+       <p class="section-description">Completa el formulario y nos pondremos en contacto contigo en menos de 24 horas.</p>
+      </div>
+      <form class="contact-form" id="contactForm">
+       <div class="form-group"><label for="name">Nombre completo</label> <input type="text" id="name" name="name" required>
+       </div>
+       <div class="form-group"><label for="email">Email</label> <input type="email" id="email" name="email" required>
+       </div>
+       <div class="form-group"><label for="phone">Teléfono</label> <input type="tel" id="phone" name="phone" required>
+       </div>
+       <div class="form-group"><label for="service">Servicio de interés</label> <select id="service" name="service" required> <option value="">Selecciona un servicio</option> <option value="web">Diseño Web</option> <option value="graphic">Diseño Gráfico</option> <option value="digital">Diseño Digital</option> <option value="branding">Branding Completo</option> <option value="consulting">Consultoría</option> </select>
+       </div>
+       <div class="form-group"><label for="message">Cuéntanos sobre tu proyecto</label> <textarea id="message" name="message" required></textarea>
+       </div><button type="submit" class="form-submit">Enviar mensaje</button>
+       <div class="form-message" id="formMessage"></div>
+      </form>
+     </div>
+    </section>
+   </main><!-- ============================================
+       SERVICE MODALS
+  ============================================ --> <!-- Modal Diseño Web -->
+   <div class="modal-overlay" id="modal-web">
+    <div class="modal-content">
+     <div class="modal-header">
+      <h2>🎨 Diseño Web Profesional</h2><button class="modal-close" aria-label="Cerrar modal">×</button>
+     </div>
+     <div class="modal-body"><img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1200&amp;h=400&amp;fit=crop" alt="Diseño web profesional" class="modal-hero-img">
+      <p class="modal-intro">Creamos sitios web que no solo se ven increíbles, sino que también convierten visitantes en clientes. Cada proyecto es único, diseñado con estrategia, tecnología de vanguardia y atención obsesiva al detalle.</p>
+      <div class="modal-features">
+       <h3>¿Qué incluye nuestro servicio?</h3>
+       <div class="features-grid">
+        <div class="feature-item"><span class="feature-icon">📱</span>
+         <h4>Diseño Responsivo</h4>
+         <p>Tu sitio se verá perfecto en cualquier dispositivo: móvil, tablet, desktop. Experiencia fluida garantizada.</p>
+        </div>
+        <div class="feature-item"><span class="feature-icon">⚡</span>
+         <h4>Optimización SEO</h4>
+         <p>Configuración técnica completa para que Google te encuentre. Metadatos, velocidad, estructura optimizada.</p>
+        </div>
+        <div class="feature-item"><span class="feature-icon">🎯</span>
+         <h4>UX/UI Premium</h4>
+         <p>Interfaces intuitivas que guían al usuario hacia la conversión. Diseño centrado en la experiencia.</p>
+        </div>
+        <div class="feature-item"><span class="feature-icon">🔒</span>
+         <h4>Seguridad SSL</h4>
+         <p>Certificados de seguridad, backups automáticos y protección contra amenazas. Tu sitio siempre seguro.</p>
+        </div>
+        <div class="feature-item"><span class="feature-icon">📊</span>
+         <h4>Analytics Integrado</h4>
+         <p>Seguimiento completo de métricas y comportamiento de usuarios para optimización continua.</p>
+        </div>
+        <div class="feature-item"><span class="feature-icon">🚀</span>
+         <h4>Carga Ultra Rápida</h4>
+         <p>Optimización de imágenes, código limpio y hosting premium para tiempos de carga mínimos.</p>
+        </div>
+       </div>
+      </div>
+      <div class="modal-gallery">
+       <h3>Ejemplos de nuestro trabajo</h3>
+       <div class="gallery-grid"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&amp;h=300&amp;fit=crop" alt="Dashboard moderno" class="gallery-item"> <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=400&amp;h=300&amp;fit=crop" alt="Sitio web corporativo" class="gallery-item"> <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=400&amp;h=300&amp;fit=crop" alt="Landing page premium" class="gallery-item">
+       </div>
+      </div>
+      <div class="modal-cta">
+       <h3>¿Listo para llevar tu presencia digital al siguiente nivel?</h3>
+       <p>Agenda una consulta gratuita y descubre cómo podemos transformar tu visión en realidad.</p><a href="#contacto" class="btn btn-primary">Solicitar cotización</a> <a href="https://leonova-studio.github.io/portfolio/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Ver más proyectos</a>
+      </div>
+     </div>
+    </div>
+   </div><!-- Modal Diseño Gráfico -->
+   <div class="modal-overlay" id="modal-grafico">
+    <div class="modal-content">
+     <div class="modal-header">
+      <h2>✨ Diseño Gráfico &amp; Branding</h2><button class="modal-close" aria-label="Cerrar modal">×</button>
+     </div>
+     <div class="modal-body"><img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&amp;h=400&amp;fit=crop" alt="Diseño gráfico profesional" class="modal-hero-img">
+      <p class="modal-intro">Tu marca merece destacar. Creamos identidades visuales completas que cuentan historias, conectan emocionalmente y dejan huella. Desde el logo hasta cada pieza de comunicación, diseñamos con propósito.</p>
+      <div class="modal-features">
+       <h3>¿Qué incluye nuestro servicio?</h3>
+       <div class="features-grid">
+        <div class="feature-item"><span class="feature-icon">🎨</span>
+         <h4>Identidad Visual</h4>
+         <p>Logo, paleta de colores, tipografías y manual de marca. Tu identidad completa y coherente.</p>
+        </div>
+        <div class="feature-item"><span class="feature-icon">📄</span>
+         <h4>Material Corporativo</h4>
+         <p>Tarjetas de presentación, papelería, sobres, carpetas. Todo diseñado bajo tu identidad.</p>
+        </div>
+        <div class="feature-item"><span class="feature-icon">📱</span>
+         <h4>Redes Sociales</h4>
+         <p>Plantillas para posts, stories, banners y contenido visual que viraliza tu mensaje.</p>
+        </div>
+        <div class="feature-item"><span class="feature-icon">📦</span>
+         <h4>Packaging</h4>
+         <p>Diseño de empaques que protegen y venden. Unboxing experience memorable.</p>
+        </div>
+        <div class="feature-item"><span class="feature-icon">🖼️</span>
+         <h4>Material Promocional</h4>
+         <p>Flyers, brochures, banners, señalética. Material impreso de alta calidad.</p>
+        </div>
+        <div class="feature-item"><span class="feature-icon">💼</span>
+         <h4>Presentaciones</h4>
+         <p>Pitch decks y presentaciones corporativas que impresionan y convencen.</p>
+        </div>
+       </div>
+      </div>
+      <div class="modal-gallery">
+       <h3>Portfolio de diseño gráfico</h3>
+       <div class="gallery-grid"><img src="https://images.unsplash.com/photo-1626785774625-0b1c2c4eab67?w=400&amp;h=300&amp;fit=crop" alt="Diseño de logo" class="gallery-item"> <img src="https://images.unsplash.com/photo-1600096194534-95cf5ece04cf?w=400&amp;h=300&amp;fit=crop" alt="Branding corporativo" class="gallery-item"> <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&amp;h=300&amp;fit=crop" alt="Packaging design" class="gallery-item">
+       </div>
+      </div>
+      <div class="modal-cta">
+       <h3>Construyamos juntos una marca inolvidable</h3>
+       <p>Comienza con una consultoría de branding gratuita. Analizamos tu mercado y te proponemos la estrategia visual perfecta.</p><a href="#contacto" class="btn btn-primary">Solicitar cotización</a> <a href="https://leonova-studio.github.io/portfolio/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Ver portfolio completo</a>
+      </div>
+     </div>
+    </div>
+   </div><!-- Modal Diseño Digital -->
+   <div class="modal-overlay" id="modal-digital">
+    <div class="modal-content">
+     <div class="modal-header">
+      <h2>🚀 Diseño Digital &amp; Experiencias</h2><button class="modal-close" aria-label="Cerrar modal">×</button>
+     </div>
+     <div class="modal-body"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&amp;h=400&amp;fit=crop" alt="Diseño digital" class="modal-hero-img">
+      <p class="modal-intro">Diseñamos experiencias digitales que cautivan, interactúan y convierten. Desde campañas en redes hasta aplicaciones interactivas, creamos contenido digital que genera impacto real en audiencias globales.</p>
+      <div class="modal-features">
+       <h3>¿Qué incluye nuestro servicio?</h3>
+       <div class="features-grid">
+        <div class="feature-item"><span class="feature-icon">📲</span>
+         <h4>Campañas Digitales</h4>
+         <p>Estrategia, diseño y ejecución de campañas visuales para ads, email marketing y redes sociales.</p>
+        </div>
+        <div class="feature-item"><span class="feature-icon">🎬</span>
+         <h4>Motion Graphics</h4>
+         <p>Animaciones, videos explicativos y motion design que dan vida a tu mensaje.</p>
+        </div>
+        <div class="feature-item"><span class="feature-icon">🖥️</span>
+         <h4>Interfaces UI/UX</h4>
+         <p>Diseño de apps, dashboards y plataformas web con experiencia de usuario excepcional.</p>
+        </div>
+        <div class="feature-item"><span class="feature-icon">📊</span>
+         <h4>Infografías</h4>
+         <p>Visualización de datos complejos en gráficos atractivos y fáciles de entender.</p>
+        </div>
+        <div class="feature-item"><span class="feature-icon">🎮</span>
+         <h4>Experiencias Interactivas</h4>
+         <p>Micrositios, quizzes, calculadoras y herramientas que generan engagement.</p>
+        </div>
+        <div class="feature-item"><span class="feature-icon">📧</span>
+         <h4>Email Templates</h4>
+         <p>Newsletters y templates de email responsivos que convierten suscriptores en clientes.</p>
+        </div>
+       </div>
+      </div>
+      <div class="modal-gallery">
+       <h3>Proyectos digitales destacados</h3>
+       <div class="gallery-grid"><img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&amp;h=300&amp;fit=crop" alt="App móvil" class="gallery-item"> <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&amp;h=300&amp;fit=crop" alt="Dashboard analytics" class="gallery-item"> <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=400&amp;h=300&amp;fit=crop" alt="Campaña digital" class="gallery-item">
+       </div>
+      </div>
+      <div class="modal-cta">
+       <h3>Transforma tu presencia digital</h3>
+       <p>Desde campañas virales hasta apps que enamoran. Cuéntanos tu visión y la hacemos realidad.</p><a href="#contacto" class="btn btn-primary">Solicitar cotización</a> <a href="https://leonova-studio.github.io/portfolio/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Ver casos de éxito</a>
+      </div>
+     </div>
+    </div>
+   </div><!-- ============================================
+       FOOTER
+  ============================================ -->
+   <footer>
+    <div class="footer-content">
+     <div class="footer-section">
+      <div class="footer-logo">
+       Leonova Studio
+      </div>
+      <p class="footer-description">Transformamos ideas en experiencias digitales memorables. Diseño que conecta, estrategia que emociona.</p>
+      <div class="footer-social"><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+        </svg></a> <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+        </svg></a> <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="TikTok">
+        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+        </svg></a>
+      </div>
+     </div>
+     <div class="footer-section">
+      <h3>Navegación</h3>
+      <ul class="footer-menu">
+       <li><a href="#home">Home</a></li>
+       <li><a href="#servicios">Servicios</a></li>
+       <li><a href="https://leonova-studio.github.io/portfolio/" target="_blank" rel="noopener noreferrer">Portafolio</a></li>
+       <li><a href="#contacto">Contacto</a></li>
+      </ul>
+     </div>
+     <div class="footer-section">
+      <h3>Servicios</h3>
+      <ul class="footer-menu">
+       <li><a href="#servicios">Diseño Web</a></li>
+       <li><a href="#servicios">Diseño Gráfico</a></li>
+       <li><a href="#servicios">Diseño Digital</a></li>
+       <li><a href="#servicios">Branding</a></li>
+      </ul>
+     </div>
+     <div class="footer-section">
+      <h3>Contacto</h3>
+      <ul class="footer-menu">
+       <li><a href="mailto:hola@leonovastudio.com">hola@leonovastudio.com</a></li>
+       <li><a href="tel:+18687786115">+1 (868) 778-6115</a></li>
+      </ul>
+     </div>
+    </div>
+    <div class="footer-bottom">
+     <p>© 2026 Leonova Studio. Todos los derechos reservados.</p>
+     <p>Diseñado por: <a href="https://leonova-studio.github.io/portfolio/" target="_blank" rel="noopener noreferrer">LEONOVA STUDIO</a></p>
+    </div>
+   </footer><!-- ============================================
+       WHATSAPP FLOATING BUTTON
+  ============================================ -->
+   <div class="whatsapp-float"><button class="whatsapp-btn" aria-label="Abrir chat de WhatsApp">
+     <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+     </svg></button>
+    <div class="whatsapp-window">
+     <div class="whatsapp-header">
+      <h3>Chatea con nosotros</h3><button class="whatsapp-close" aria-label="Cerrar chat">×</button>
+     </div>
+     <div class="whatsapp-body">
+      <p>¡Hola! 👋 Estamos aquí para ayudarte. Completa estos datos para comenzar:</p>
+      <form class="whatsapp-form" id="whatsappForm">
+       <div><label for="wa-name">Tu nombre</label> <input type="text" id="wa-name" required>
+       </div>
+       <div><label for="wa-interest">¿Qué te interesa?</label> <select id="wa-interest" required> <option value="">Selecciona una opción</option> <option value="Diseño Web">Diseño Web</option> <option value="Diseño Gráfico">Diseño Gráfico</option> <option value="Diseño Digital">Diseño Digital</option> <option value="Cotización">Solicitar Cotización</option> <option value="Consulta">Consulta General</option> </select>
+       </div><button type="submit" class="whatsapp-submit">Enviar mensaje a WhatsApp</button>
+      </form>
+     </div>
+    </div>
+   </div>
+  </div><!-- ============================================
+     JAVASCRIPT
+============================================ -->
+  <script>
+  // ========================================
+  // Mobile Menu Toggle
+  // ========================================
+  const hamburger = document.querySelector('.hamburger');
+  const navMobile = document.querySelector('.nav-mobile');
+  
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMobile.classList.toggle('active');
+    const isExpanded = hamburger.classList.contains('active');
+    hamburger.setAttribute('aria-expanded', isExpanded);
+  });
+  
+  // Cerrar menú al hacer clic en un enlace
+  document.querySelectorAll('.nav-mobile a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navMobile.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+  
+  // ========================================
+  // Hero Carousel
+  // ========================================
+  const carouselSlides = document.querySelector('.carousel-slides');
+  const slides = document.querySelectorAll('.carousel-slide');
+  const indicators = document.querySelectorAll('.carousel-indicator');
+  const prevBtn = document.querySelector('.carousel-prev');
+  const nextBtn = document.querySelector('.carousel-next');
+  const playBtn = document.querySelector('.carousel-play');
+  
+  let currentSlide = 0;
+  let isPlaying = true;
+  let autoplayInterval;
+  
+  const playIcon = '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
+  const pauseIcon = '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/></svg>';
+  
+  function goToSlide(index) {
+    currentSlide = index;
+    carouselSlides.style.transform = `translateX(-${currentSlide * 100}%)`;
+    
+    indicators.forEach((indicator, i) => {
+      indicator.classList.toggle('active', i === currentSlide);
+    });
+  }
+  
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    goToSlide(currentSlide);
+  }
+  
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    goToSlide(currentSlide);
+  }
+  
+  function toggleAutoplay() {
+    isPlaying = !isPlaying;
+    
+    if (isPlaying) {
+      playBtn.innerHTML = pauseIcon;
+      playBtn.setAttribute('aria-label', 'Pausar carrusel');
+      startAutoplay();
+    } else {
+      playBtn.innerHTML = playIcon;
+      playBtn.setAttribute('aria-label', 'Reproducir carrusel');
+      stopAutoplay();
+    }
+  }
+  
+  function startAutoplay() {
+    autoplayInterval = setInterval(nextSlide, 5000);
+  }
+  
+  function stopAutoplay() {
+    clearInterval(autoplayInterval);
+  }
+  
+  // Event listeners
+  prevBtn.addEventListener('click', () => {
+    prevSlide();
+    if (isPlaying) {
+      stopAutoplay();
+      startAutoplay();
+    }
+  });
+  
+  nextBtn.addEventListener('click', () => {
+    nextSlide();
+    if (isPlaying) {
+      stopAutoplay();
+      startAutoplay();
+    }
+  });
+  
+  playBtn.addEventListener('click', toggleAutoplay);
+  
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+      goToSlide(index);
+      if (isPlaying) {
+        stopAutoplay();
+        startAutoplay();
+      }
+    });
+  });
+  
+  // Pausar en hover
+  const heroCarousel = document.querySelector('.hero-carousel');
+  heroCarousel.addEventListener('mouseenter', () => {
+    if (isPlaying) stopAutoplay();
+  });
+  
+  heroCarousel.addEventListener('mouseleave', () => {
+    if (isPlaying) startAutoplay();
+  });
+  
+  // Iniciar autoplay
+  startAutoplay();
+  
+  // ========================================
+  // Service Modals
+  // ========================================
+  const serviceCards = document.querySelectorAll('.service-card');
+  const modalCloseButtons = document.querySelectorAll('.modal-close');
+  const modalOverlays = document.querySelectorAll('.modal-overlay');
+  
+  // Abrir modales
+  serviceCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const modalId = card.getAttribute('data-modal');
+      const modal = document.getElementById(`modal-${modalId}`);
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+  
+  // Cerrar modales con botón
+  modalCloseButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const modal = btn.closest('.modal-overlay');
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  });
+  
+  // Cerrar modales al hacer clic en el overlay
+  modalOverlays.forEach(overlay => {
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  });
+  
+  // Cerrar modales con tecla Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      modalOverlays.forEach(overlay => {
+        overlay.classList.remove('active');
+      });
+      document.body.style.overflow = '';
+    }
+  });
+  
+  // ========================================
+  // WhatsApp Float Button
+  // ========================================
+  const whatsappBtn = document.querySelector('.whatsapp-btn');
+  const whatsappWindow = document.querySelector('.whatsapp-window');
+  const whatsappClose = document.querySelector('.whatsapp-close');
+  const whatsappForm = document.getElementById('whatsappForm');
+  
+  whatsappBtn.addEventListener('click', () => {
+    whatsappWindow.classList.toggle('active');
+  });
+  
+  whatsappClose.addEventListener('click', () => {
+    whatsappWindow.classList.remove('active');
+  });
+  
+  whatsappForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const name = document.getElementById('wa-name').value;
+    const interest = document.getElementById('wa-interest').value;
+    
+    const message = `Hola! Soy ${name}. Estoy interesado en: ${interest}`;
+    const phoneNumber = '18687786115';
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    
+    whatsappForm.reset();
+    whatsappWindow.classList.remove('active');
+  });
+  
+  // Cerrar ventana al hacer clic fuera
+  document.addEventListener('click', (e) => {
+    if (!whatsappWindow.contains(e.target) && !whatsappBtn.contains(e.target)) {
+      whatsappWindow.classList.remove('active');
+    }
+  });
+  
+  // ========================================
+  // Contact Form
+  // ========================================
+  const contactForm = document.getElementById('contactForm');
+  const formMessage = document.getElementById('formMessage');
+  
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    formMessage.textContent = '¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.';
+    formMessage.classList.add('success');
+    
+    contactForm.reset();
+    
+    setTimeout(() => {
+      formMessage.classList.remove('success');
+      formMessage.textContent = '';
+    }, 5000);
+  });
+  
+  // ========================================
+  // Smooth Scroll
+  // ========================================
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href !== '#' && href.length > 1) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          // Cerrar modales si están abiertos
+          modalOverlays.forEach(overlay => overlay.classList.remove('active'));
+          document.body.style.overflow = '';
+          
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
+    });
+  });
+  
+  // ========================================
+  // Active Navigation on Scroll
+  // ========================================
+  const sections = document.querySelectorAll('section[id], main[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  function setActiveNav() {
+    let currentSection = '';
+    
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (scrollY >= sectionTop - 200) {
+        currentSection = section.getAttribute('id');
+      }
+    });
+    
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${currentSection}`) {
+        link.classList.add('active');
+      }
+    });
+  }
+  
+  window.addEventListener('scroll', setActiveNav);
+</script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b03199022e5f471',t:'MTc2NjEwNzQ2MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
