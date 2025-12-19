@@ -1,6 +1,12 @@
-<!doctype html>
 <html lang="es">
  <head>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body>
+  <img src="https://ejemplo.com/mi-logo.png" alt="Logo Leonova Studio" class="logo-image">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Leonova Studio - Agencia premium de diseño web, gráfico y digital. Transformamos ideas en experiencias digitales inolvidables.">
@@ -72,12 +78,21 @@
     }
     
     .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
       font-size: 1.5rem;
       font-weight: 800;
       color: var(--color-gold);
       text-decoration: none;
       letter-spacing: -0.5px;
       white-space: nowrap;
+    }
+    
+    .logo-image {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
     }
     
     .nav-desktop {
@@ -1027,6 +1042,11 @@
         font-size: 1.25rem;
       }
       
+      .logo-image {
+        width: 24px;
+        height: 24px;
+      }
+      
       .carousel-content h2 {
         font-size: 2rem;
       }
@@ -1096,17 +1116,11 @@
       }
     }
   </style>
-  <style>@view-transition { navigation: auto; }</style>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
-  <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
-  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
- </head>
- <body>
   <div class="page-wrapper"><!-- ============================================
        HEADER
   ============================================ -->
    <header>
-    <div class="header-content"><a href="#home" class="logo">Leonova Studio</a> <!-- Desktop Navigation -->
+    <div class="header-content"><a href="#home" class="logo"> <img src="TU_LOGO_AQUI.png" alt="Logo Leonova Studio" class="logo-image"> Leonova Studio </a> <!-- Desktop Navigation -->
      <nav class="nav-desktop" aria-label="Navegación principal">
       <ul class="nav-menu">
        <li><a href="#home" class="nav-link">Home</a></li>
@@ -1164,7 +1178,7 @@
        <div class="carousel-overlay"></div>
        <div class="carousel-content">
         <h2>Tu visión, nuestra misión</h2>
-        <p>Soluciones premium en diseño web, gráfico y digital para marcas que quieren destacar.</p><a href="#servicios" class="btn btn-primary">Explorar Servicios</a>
+        <p>Soluciones premium en diseño web, gr����fico y digital para marcas que quieren destacar.</p><a href="#servicios" class="btn btn-primary">Explorar Servicios</a>
        </div>
       </div>
      </div><!-- Controles del carrusel -->
@@ -1352,7 +1366,7 @@
          <h4>Motion Graphics</h4>
          <p>Animaciones, videos explicativos y motion design que dan vida a tu mensaje.</p>
         </div>
-        <div class="feature-item"><span class="feature-icon">🖥️</span>
+        <div class="feature-item"><span class="feature-icon">��️</span>
          <h4>Interfaces UI/UX</h4>
          <p>Diseño de apps, dashboards y plataformas web con experiencia de usuario excepcional.</p>
         </div>
@@ -1387,8 +1401,7 @@
    <footer>
     <div class="footer-content">
      <div class="footer-section">
-      <div class="footer-logo">
-       Leonova Studio
+      <div class="footer-logo" style="display: flex; align-items: center; gap: 0.5rem;"><img src="TU_LOGO_AQUI.png" alt="Logo Leonova Studio" style="width: 28px; height: 28px; object-fit: contain;"> Leonova Studio
       </div>
       <p class="footer-description">Transformamos ideas en experiencias digitales memorables. Diseño que conecta, estrategia que emociona.</p>
       <div class="footer-social"><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
@@ -1441,7 +1454,7 @@
       <h3>Chatea con nosotros</h3><button class="whatsapp-close" aria-label="Cerrar chat">×</button>
      </div>
      <div class="whatsapp-body">
-      <p>¡Hola! 👋 Estamos aquí para ayudarte. Completa estos datos para comenzar:</p>
+      <p>¡Hola! 👋 Estamos aqu�� para ayudarte. Completa estos datos para comenzar:</p>
       <form class="whatsapp-form" id="whatsappForm">
        <div><label for="wa-name">Tu nombre</label> <input type="text" id="wa-name" required>
        </div>
@@ -1734,5 +1747,5 @@
   
   window.addEventListener('scroll', setActiveNav);
 </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b03199022e5f471',t:'MTc2NjEwNzQ2MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b0353edb2aea683',t:'MTc2NjEwOTg1MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
